@@ -2,6 +2,17 @@
 $str=$_POST['txtarea'];
 $sprt=$_POST['separator'];
 
+if (empty($str)&&empty($sprt)) {
+	header("Location: index.php?msg=Data dan Separator belum terisi");
+	exit();
+}elseif (empty($str)) {
+	header("Location: index.php?msg=Data belum terisi");
+	exit();
+}elseif (empty($sprt)) {
+	header("Location: index.php?msg=Separator belum terisi");
+	exit();
+}
+
 $arr=explode(PHP_EOL,$str);
 
 ?>
@@ -38,13 +49,14 @@ $arr=explode(PHP_EOL,$str);
 ?>
 			</table>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-1">
 			<form method="post" action="export.php">
 				<input type="hidden" name="str" value="<?php echo $str;?>">
 				<input type="hidden" name="sprt" value="<?php echo $sprt;?>">
-				<button class="btn btn-default">export</button>
+				<button class="btn btn-default btn-block">Export</button>
 			</form>
-			
+			<br>
+			<button class="btn btn-default btn-block" onclick="window.location.assign('index.php');">Back</button>
 		</div>
 	</div>
 	

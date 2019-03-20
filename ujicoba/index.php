@@ -1,3 +1,8 @@
+<?php 
+$msg=$_GET['msg'];
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,19 +16,24 @@
 			<h1>Header</h1>
 		</div>
 		<div class="col-md-12">
+			<?php
+				if (!empty($msg)) {
+					echo "<div class='alert alert-danger alert-dismissible fade in'>
+    						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+    						<strong>Perhatian!</strong> $msg.
+  							</div>";
+				}
+			 ?>
+			
 			<form method='post' action="array.php">
 			<div class="form-group">
-				<div class="col-md-12">
+				<div class="col-md-1 text-right">
+					<label for="txtarea">Data:</label>
+				</div>
+				<div class="col-md-11" style="margin-bottom: 1.2em">
 					<textarea class="form-control" id="textarea" name="txtarea" rows="5"></textarea>
 				</div>
 			</div>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-
-			<br>
 			<div class="form-group">
 				<div class="col-md-1 text-right">
 					<label for="separator">Separator:</label>

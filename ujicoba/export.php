@@ -1,7 +1,9 @@
 <?php
 $str=$_POST['str'];
 $sprt=$_POST['sprt'];
-$namaFile = "emailspotify.txt";
+
+$dt=date('dmY');
+$namaFile = "emailspotify_".$dt.".txt";
 
 $separator = "\r\n";
 header("Content-type: text/plain");
