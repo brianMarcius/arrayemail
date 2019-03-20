@@ -1,5 +1,6 @@
 <?php 
 $str=$_POST['txtarea'];
+$sprt=$_POST['separator'];
 
 $arr=explode(PHP_EOL,$str);
 
@@ -27,7 +28,7 @@ $arr=explode(PHP_EOL,$str);
 				<?php
 					$no=1;
 					foreach ($arr as $k) {
-						$email = explode(" | ", $k);
+						$email = explode($sprt, $k);
 						echo "<tr>
 								<td>$no</td>
 								<td>".$email[0]."</td>
@@ -40,6 +41,7 @@ $arr=explode(PHP_EOL,$str);
 		<div class="col-md-2">
 			<form method="post" action="export.php">
 				<input type="hidden" name="str" value="<?php echo $str;?>">
+				<input type="hidden" name="sprt" value="<?php echo $sprt;?>">
 				<button class="btn btn-default">export</button>
 			</form>
 			

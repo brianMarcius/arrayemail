@@ -13,11 +13,27 @@
 		<div class="col-md-12">
 			<form method='post' action="array.php">
 			<div class="form-group">
-					<textarea class="form-control" id="textarea" name="txtarea"></textarea>
-					
+				<div class="col-md-12">
+					<textarea class="form-control" id="textarea" name="txtarea" rows="5"></textarea>
+				</div>
 			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<br>
 			<div class="form-group">
-				<button class='btn btn-default' id="btsubmit">Submit</button>
+				<div class="col-md-1 text-right">
+					<label for="separator">Separator:</label>
+				</div>
+				<div class="col-md-3">
+					<input class="form-control" type="text" name="separator">
+				</div>
+				<div class="col-md-2">
+					<button class='btn btn-default' id="btsubmit">Submit</button>
+				</div>
 			</div>
 			</form>
 		</div>
